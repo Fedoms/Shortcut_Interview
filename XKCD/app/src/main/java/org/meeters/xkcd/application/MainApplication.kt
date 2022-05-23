@@ -1,14 +1,19 @@
 package org.meeters.xkcd.application
 
 import android.app.Application
-import org.meeters.xkcd.repository.MainRepositoryImpl
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
+import org.meeters.xkcd.repository.appModule
 
 class MainApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        MainRepositoryImpl().apply {
-             // inject here the appModule so the Repository does not die
+        startKoin {
+            androidLogger()
+            androidContext(this@MainApplication)
+            modules(appModule)
         }
     }
 }

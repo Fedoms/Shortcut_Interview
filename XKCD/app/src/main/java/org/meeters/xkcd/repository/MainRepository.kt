@@ -1,6 +1,20 @@
 package org.meeters.xkcd.repository
 
-class  MainRepositoryImpl () {
+interface  MainRepository{
+    fun getCurrentComic()
+    fun getComic(numberComic:Int)
+}
+
+
+class  MainRepositoryImpl (val api: ServiceApi) : MainRepository{
+    override fun getCurrentComic() {
+        api.getCurrentPage()
+    }
+
+    override fun getComic(numberComic: Int) {
+        api.getPage(numberComic)
+    }
 
 
 }
+
