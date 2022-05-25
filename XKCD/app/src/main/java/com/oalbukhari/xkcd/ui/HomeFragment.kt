@@ -1,6 +1,7 @@
-package org.meeters.xkcd.ui
+package com.oalbukhari.xkcd.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,25 +9,23 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.oalbukhari.xkcd.R
+import com.oalbukhari.xkcd.viewmodel.XkcdViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
-import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.meeters.xkcd.R
-import org.meeters.xkcd.viewmodel.XkcdViewModel
 
 /**
  * The User will have the possibility to see first the current Comic
  * The user will have the possibility to choose to see more details about the comic
  * The user will have the possibility to choose to see a random Page from the list
- * The user will have the possibility to see th explanation of the page by a module that opens an in app Browwser
+ * The user will have the possibility to see the explanation of the page by a module that opens an in app Browwser
  */
 
 
 class HomeFragment : Fragment() {
 
     lateinit var modalBottomSheet: WebViewBottomSheet
-    private val viewModel by sharedViewModel<XkcdViewModel> ()
+    private val viewModel by sharedViewModel<XkcdViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,21 +53,28 @@ class HomeFragment : Fragment() {
             viewModel.setRandomCall()
         }
         viewModel.disable.observe(viewLifecycleOwner, Observer {
+            Log.d("NEXT","${it}")
             when (it) {
                 XkcdViewModel.DISABLE.NEXT -> {
                     next.isEnabled = false
+                    next.isClickable = false
                 }
                 XkcdViewModel.DISABLE.PREVIOUS -> {
                     previous.isEnabled = false
+                    previous.isClickable = false
+
                 }
                 XkcdViewModel.DISABLE.NORMAL -> {
                     next.isEnabled = true
+                    next.isClickable = true
                     previous.isEnabled = true
+                    previous.isClickable = true
+
                 }
             }
         })
         next.setOnClickListener {
-           viewModel.next()
+            viewModel.next()
         }
         previous.setOnClickListener {
             viewModel.previous()

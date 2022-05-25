@@ -1,6 +1,6 @@
-package org.meeters.xkcd.repository
+package com.oalbukhari.xkcd.repository
 
-import org.meeters.xkcd.model.XKcdComic
+import com.oalbukhari.xkcd.model.XKcdComic
 import retrofit2.http.GET
 import retrofit2.http.Path
 

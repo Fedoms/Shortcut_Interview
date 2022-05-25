@@ -1,4 +1,4 @@
-package org.meeters.xkcd.ui
+package com.oalbukhari.xkcd.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,12 +8,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_detail.*
-import org.koin.androidx.viewmodel.ext.android.getSharedViewModel
-import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.meeters.xkcd.R
-import org.meeters.xkcd.ui.adapter.XkcdAdapter
-import org.meeters.xkcd.viewmodel.XkcdViewModel
+import com.oalbukhari.xkcd.R
+import com.oalbukhari.xkcd.ui.adapter.XkcdAdapter
+import com.oalbukhari.xkcd.viewmodel.XkcdViewModel
 
 class DetailFragment : Fragment() {
 

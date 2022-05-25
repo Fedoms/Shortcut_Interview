@@ -1,12 +1,10 @@
-package org.meeters.xkcd
+package com.oalbukhari.xkcd
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.meeters.xkcd.viewmodel.XkcdViewModel
+import com.oalbukhari.xkcd.R
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController

@@ -1,4 +1,4 @@
-package org.meeters.xkcd.ui.adapter
+package com.oalbukhari.xkcd.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,11 +9,10 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_button.view.*
 import kotlinx.android.synthetic.main.item_image.view.*
 import kotlinx.android.synthetic.main.item_text.view.*
-import org.koin.core.component.KoinComponent
-import org.meeters.xkcd.R
-import org.meeters.xkcd.ext.openUrl
-import org.meeters.xkcd.model.RecylcerModel
-import org.meeters.xkcd.model.VIEW
+import com.oalbukhari.xkcd.R
+import com.oalbukhari.xkcd.ext.openUrl
+import com.oalbukhari.xkcd.model.RecylcerModel
+import com.oalbukhari.xkcd.model.VIEW
 
 class XkcdAdapter(val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     val info: MutableList<RecylcerModel> = mutableListOf()

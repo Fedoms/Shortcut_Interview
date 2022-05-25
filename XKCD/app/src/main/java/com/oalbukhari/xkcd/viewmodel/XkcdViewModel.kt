@@ -1,13 +1,13 @@
-package org.meeters.xkcd.viewmodel
+package com.oalbukhari.xkcd.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import org.meeters.xkcd.ext.launchIO
-import org.meeters.xkcd.model.RecylcerModel
-import org.meeters.xkcd.model.VIEW
-import org.meeters.xkcd.model.XKcdComic
-import org.meeters.xkcd.repository.MainRepository
+import com.oalbukhari.xkcd.ext.launchIO
+import com.oalbukhari.xkcd.model.RecylcerModel
+import com.oalbukhari.xkcd.model.VIEW
+import com.oalbukhari.xkcd.model.XKcdComic
+import com.oalbukhari.xkcd.repository.MainRepository
 import kotlin.random.Random
 
 class XkcdViewModel(val repository: MainRepository) : ViewModel() {
@@ -27,19 +27,19 @@ class XkcdViewModel(val repository: MainRepository) : ViewModel() {
     private fun callCurrentComic() = viewModelScope.launchIO {
         val value = repository.getCurrentComic()
         maxNumberComic.postValue(value.num)
-        comic.postValue(value)
         currentComic.postValue(value.num)
-        checkDisabled()
+        comic.postValue(value)
         createList()
+        checkDisabled()
     }
 
 
     fun callComicByPage(page: Int) = viewModelScope.launchIO {
         val value = repository.getComic(page)
-        comic.postValue(value)
         currentComic.postValue(value.num)
-        checkDisabled()
+        comic.postValue(value)
         createList()
+        checkDisabled()
     }
 
 
@@ -49,10 +49,10 @@ class XkcdViewModel(val repository: MainRepository) : ViewModel() {
 
 
     fun checkDisabled() {
-        if (maxNumberComic.equals(currentComic)) {
+        if (maxNumberComic.value?.equals(currentComic.value) == true) {
             disable.postValue(DISABLE.NEXT)
         } else {
-            if (currentComic.equals(1)) {
+            if (currentComic.value?.equals(1) == true) {
                 disable.postValue(DISABLE.PREVIOUS)
             } else {
                 disable.postValue(DISABLE.NORMAL)
@@ -67,7 +67,6 @@ class XkcdViewModel(val repository: MainRepository) : ViewModel() {
 
     fun previous() {
         currentComic.value?.minus(1)?.let { callComicByPage(it) }
-
     }
 
     private fun createList() {
@@ -85,7 +84,7 @@ class XkcdViewModel(val repository: MainRepository) : ViewModel() {
         comicInfoMutable.add(RecylcerModel("Trascript: ${comic.value?.transcript}", VIEW.TEXT))
         comicInfoMutable.add(RecylcerModel("Alt: ${comic.value?.alt}", VIEW.TEXT))
         comicInfoMutable.add(RecylcerModel("${comic.value?.img}", VIEW.IMAGE))
-        comicInfoMutable.add(RecylcerModel("https://www.explainxkcd.com/wiki/index.php/+ ${comic.value?.num}", VIEW.WEBSITE))
+        comicInfoMutable.add(RecylcerModel("https://www.explainxkcd.com/wiki/index.php/${comic.value?.num}", VIEW.WEBSITE))
         comicInfo.postValue(comicInfoMutable)
 
     }

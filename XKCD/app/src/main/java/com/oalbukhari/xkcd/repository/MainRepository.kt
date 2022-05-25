@@ -1,6 +1,6 @@
-package org.meeters.xkcd.repository
+package com.oalbukhari.xkcd.repository
 
-import org.meeters.xkcd.model.XKcdComic
+import com.oalbukhari.xkcd.model.XKcdComic
 
 interface MainRepository {
     suspend fun getCurrentComic(): XKcdComic

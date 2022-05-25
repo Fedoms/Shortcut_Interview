@@ -1,4 +1,4 @@
-package org.meeters.xkcd.ui
+package com.oalbukhari.xkcd.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import org.meeters.xkcd.R
+import com.oalbukhari.xkcd.R
 
 class WebViewBottomSheet(val url: String) : BottomSheetDialogFragment() {
 

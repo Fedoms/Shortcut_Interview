@@ -1,4 +1,4 @@
-package org.meeters.xkcd.ext
+package com.oalbukhari.xkcd.ext
 
 import android.content.Context
 import android.content.Intent

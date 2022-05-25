@@ -1,4 +1,4 @@
-package org.meeters.xkcd
+package com.oalbukhari.xkcd
 
 import org.junit.Test
 

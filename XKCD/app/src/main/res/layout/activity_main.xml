@@ -11,4 +11,4 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior"
 app:defaultNavHost="true"
 app:navGraph="@navigation/main_navigation"
 tools:ignore="FragmentTagUsage"
-tools:context=".MainActivity"/>
+tools:context="com.oalbukhari.xkcd.MainActivity"/>

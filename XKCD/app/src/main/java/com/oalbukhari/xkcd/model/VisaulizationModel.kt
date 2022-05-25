@@ -1,4 +1,4 @@
-package org.meeters.xkcd.model
+package com.oalbukhari.xkcd.model
 
 data class RecylcerModel(
     val value: String,

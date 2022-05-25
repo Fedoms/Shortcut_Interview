@@ -1,10 +1,10 @@
-package org.meeters.xkcd.application
+package com.oalbukhari.xkcd.application
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
-import org.meeters.xkcd.repository.appModule
+import com.oalbukhari.xkcd.repository.appModule
 
 class MainApplication : Application() {
 
