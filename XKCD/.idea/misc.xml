@@ -3,9 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/gradient_drawable.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/ic_help_48px.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/ic_info_48px.xml" value="0.197" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20199275362318841" />
-        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.2418478260869565" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2418478260869565" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_button.xml" value="0.2418478260869565" />
+        <entry key="app/src/main/res/layout/item_image.xml" value="0.2418478260869565" />
+        <entry key="app/src/main/res/layout/item_text.xml" value="0.2418478260869565" />
+        <entry key="app/src/main/res/layout/modal_bottom_sheet.xml" value="0.2418478260869565" />
+        <entry key="app/src/main/res/layout/web_view_bottom.xml" value="0.2418478260869565" />
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.14635416666666667" />
       </map>
     </option>
   </component>

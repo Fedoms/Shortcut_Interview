@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">XKCD</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_text">Text Title</string>
+    <string name="description_text">Text Description</string>
+    <string name="date_release"> DD/MM/YYYY</string>
+    <string name="next_button">Next</string>
+    <string name="random_button">Random</string>
+    <string name="previous_button">Previous</string>
+    <string name="explanation_button">Explanation</string>
 </resources>

@@ -7,12 +7,12 @@ import retrofit2.http.Path
 interface ServiceApi {
 
     //integration call for single page
-    @GET("https://xkcd.com/{id}/info.0.json")
-    fun getPage(@Path("id")id:Int) : XKcdComic
+    @GET("/{id}/info.0.json")
+    suspend fun getPage(@Path("id")id:Int) : XKcdComic
 
     //integration call for current page
 
-    @GET("https://xkcd.com/info.0.json")
-    fun getCurrentPage(): XKcdComic
+    @GET("/info.0.json")
+    suspend fun getCurrentPage(): XKcdComic
 
 }
